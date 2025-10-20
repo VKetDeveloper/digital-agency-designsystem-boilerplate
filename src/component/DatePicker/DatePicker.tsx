@@ -1,6 +1,6 @@
 'use client';
 
-import { type ComponentProps, type KeyboardEvent, type Ref, useRef } from 'react';
+import { type ComponentProps, type Ref, useRef } from 'react';
 
 export type DatePickerSize = 'lg' | 'md' | 'sm';
 
@@ -26,45 +26,38 @@ export const DatePicker = (props: DatePickerProps) => {
   const monthRef = useRef<HTMLInputElement>(null);
   const dateRef = useRef<HTMLInputElement>(null);
 
-  function handleKeyDown(event: KeyboardEvent<HTMLInputElement>) {
+  function handleKeyDown(event: React.KeyboardEvent<HTMLInputElement>) {
     if (event.key === 'ArrowRight') {
       moveRight(event);
     } else if (event.key === 'ArrowLeft') {
       moveLeft(event);
-    } else if (event.key.match(/^[^0-9]$/)) {
+    } else if (/^[0-9]$/.test(event.key) === false) {
+      // 数字以外は Ctrl/Meta 押下時を除きブロック
       if (!event.ctrlKey && !event.metaKey) {
         event.preventDefault();
       }
     }
   }
 
-  function moveRight(event: KeyboardEvent<HTMLInputElement>) {
+  function moveRight(event: React.KeyboardEvent<HTMLInputElement>) {
     const input = event.target as HTMLInputElement;
-    if (input.selectionStart !== input.selectionEnd) {
-      return;
-    }
+    if (input.selectionStart !== input.selectionEnd) return;
+
     if (input.selectionEnd === input.value.length) {
       event.preventDefault();
-      if (input === yearRef.current) {
-        monthRef.current?.focus();
-      } else if (input === monthRef.current) {
-        dateRef.current?.focus();
-      }
+      if (input === yearRef.current) monthRef.current?.focus();
+      else if (input === monthRef.current) dateRef.current?.focus();
     }
   }
 
-  function moveLeft(event: KeyboardEvent<HTMLInputElement>) {
+  function moveLeft(event: React.KeyboardEvent<HTMLInputElement>) {
     const input = event.target as HTMLInputElement;
-    if (input.selectionStart !== input.selectionEnd) {
-      return;
-    }
+    if (input.selectionStart !== input.selectionEnd) return;
+
     if (input.selectionStart === 0) {
       event.preventDefault();
-      if (input === monthRef.current) {
-        yearRef.current?.focus();
-      } else if (input === dateRef.current) {
-        monthRef.current?.focus();
-      }
+      if (input === monthRef.current) yearRef.current?.focus();
+      else if (input === dateRef.current) monthRef.current?.focus();
     }
   }
 
