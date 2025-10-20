@@ -1,6 +1,10 @@
+'use client';
+
+import { useEffect } from "react";
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Noto_Sans_JP } from "next/font/google";
 import "./globals.css";
+import { loadReadSpeaker } from '../lib/readSpeaker';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -12,6 +16,12 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+// Noto Sans Japanese を追加
+const notoSansJP = Noto_Sans_JP({
+  variable: "--font-noto-sans-jp",
+  subsets: ["latin"], // サブセットに japanese を含める
+});
+
 export const metadata: Metadata = {
   title: "デジタル庁デザインシステム Sample Boilerplate",
   description: "デジタル庁デザインシステム Sample Boilerplate",
@@ -19,13 +29,17 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
+
+  useEffect(() => {
+    const readUrl = loadReadSpeaker();
+    console.log('ReadSpeaker URL:', readUrl);
+  }, []);
+
   return (
     <html lang="ja">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${notoSansJP.variable} antialiased`}
       >
         {children}
       </body>
