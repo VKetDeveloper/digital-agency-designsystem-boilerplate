@@ -1,6 +1,6 @@
 import type { ComponentProps } from 'react';
 
-type Props = ComponentProps_v2<'button'> & {};
+type Props = ComponentProps<'button'> & {};
 
 export const NotificationBannerMobileClose = (props: Props) => {
   const { className, ...rest } = props;
