@@ -1,17 +1,15 @@
-export const loadReadSpeaker = (readId: string = 'tmp_read_contents') => {
-  (window as any).rsConf = { general: { usePost: true } };
+export function loadReadSpeaker(): string {
+  if (typeof window === "undefined") return "";
 
-  const customerId = '8435';
-  const lang = 'ja_jp';
-  const baseUrl = `https://app-eas.readspeaker.com/cgi-bin/rsent`;
-  const fullUrl = `${baseUrl}?customerid=${customerId}&lang=${lang}&readid=${readId}&url=`;
+  const custmorId = '8435';
+  const importFile = `https://cdn-eas.readspeaker.com/script/${custmorId}/webReader/webReader.js?pids=wr&disable=translation,lookup`;
 
-  const importFile = `https://cdn-eas.readspeaker.com/script/${customerId}/webReader/webReader.js?pids=wr&disable=translation,lookup`;
+  if (!document.getElementById('rs_req_Init')) {
+    const scriptElm = document.createElement("script");
+    scriptElm.src = importFile;
+    scriptElm.id = 'rs_req_Init';
+    document.head.appendChild(scriptElm);
+  }
 
-  const scriptElm = document.createElement('script');
-  scriptElm.src = importFile;
-  scriptElm.id = 'rs_req_Init';
-  document.head.appendChild(scriptElm);
-
-  return fullUrl;
-};
+  return importFile;
+}

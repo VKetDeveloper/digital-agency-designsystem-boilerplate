@@ -1,4 +1,3 @@
-// src/app/layout.tsx
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Noto_Sans_JP } from "next/font/google";
 import "./globals.css";
@@ -17,7 +16,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="ja">
       <body className={`${geistSans.variable} ${geistMono.variable} ${notoSansJP.variable} antialiased`}>
-        {/* クライアントサイドで読み上げスクリプトをロード */}
         <ReadSpeakerLoader />
         {children}
       </body>
