@@ -33,10 +33,10 @@ export default function Page() {
            デジタル庁デザインシステム サンプル
           </h1>
           <nav className="space-x-6 text-sm">
-            <a href="#" className="hover:underline text-text-link">ホーム</a>
+            <a href="/" className="hover:underline text-text-link">ホーム</a>
             <a href="/demo/" className="hover:underline text-text-link">デモ</a>
-            <a href="#" className="hover:underline text-text-link">お知らせ</a>
-            <a href="#" className="hover:underline text-text-link">サポート</a>
+            <a href="https://design.vrugd.jp/" className="hover:underline text-text-link">Document</a>
+            <a href="https://github.com/digital-go-jp/design-system-example-components-react/blob/main/README.md" className="hover:underline text-text-link">サポート</a>
           </nav>
         </div>
       </header>
