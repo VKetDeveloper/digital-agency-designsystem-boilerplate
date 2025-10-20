@@ -1,6 +1,10 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  reactStrictMode: true,
+  compiler: {
+    // ここで swc が JSX を react-jsx で扱うことを保証
+    styledComponents: false
+  }
 };
 
-export default nextConfig;
+module.exports = nextConfig;

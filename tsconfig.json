@@ -16,6 +16,10 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
+    "types": [
+      "react",
+      "react-dom"
+    ], // ← これを明示的に追加！
     "incremental": true,
     "plugins": [
       {
