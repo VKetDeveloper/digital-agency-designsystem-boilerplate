@@ -6,12 +6,7 @@ import "@fontsource/noto-serif-jp";
 import { motion } from "framer-motion";
 import "@digital-go-jp/design-tokens"
 import "@digital-go-jp/tailwind-theme-plugin"
-import {
-  EmergencyBanner,
-  EmergencyBannerHeading,
-  EmergencyBannerBody,
-  EmergencyBannerButton,
-} from '../component/lib'; // コンポーネントをインポート
+import Link from "next/link";
 
 //demo用
 const updateTime = new Date('2024-01-01T06:00:00');
@@ -27,10 +22,10 @@ export default function Page() {
             デジタル庁デザインシステム サンプル
           </h1>
           <nav className="space-x-6 text-sm">
-            <a href="/" className="hover:underline text-text-link">ホーム</a>
-            <a href="/demo/" className="hover:underline text-text-link">デモ</a>
-            <a href="https://design.vrugd.jp/" className="hover:underline text-text-link">Document</a>
-            <a href="https://github.com/digital-go-jp/design-system-example-components-react/blob/main/README.md" className="hover:underline text-text-link">サポート</a>
+            <Link href="/" className="hover:underline text-text-link">ホーム</Link>
+            <Link href="/demo/" className="hover:underline text-text-link">デモ</Link>
+            <Link href="https://design.vrugd.jp/" className="hover:underline text-text-link">Document</Link>
+            <Link href="https://github.com/digital-go-jp/design-system-example-components-react/blob/main/README.md" className="hover:underline text-text-link">サポート</Link>
           </nav>
         </div>
       </header>
