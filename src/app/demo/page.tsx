@@ -34,6 +34,7 @@ import {
   NotificationBanner_v2,
   NotificationBannerBody_v2,
   NotificationBannerClose_v2,
+  NotificationBannerHeading_v2,
   NotificationBannerHeader_v2,
 } from '../../component/Notification';
 
@@ -119,10 +120,10 @@ export default function Page() {
 
       <div className="mb-4 px-12 bg-gray-100"></div>
         <div className='flex flex-col gap-8'>
-        <EmergencyBanner_v2>
-          <EmergencyBannerHeading_v2 level='h2'>
+        <EmergencyBanner>
+          <EmergencyBannerHeading level='h2'>
             〇〇地区に避難準備情報が発令されました
-          </EmergencyBannerHeading_v2>
+          </EmergencyBannerHeading>
           <EmergencyBannerBody_v2>
             <div className='flex flex-col gap-2 desktop:gap-4'>
               <p className='text-std-16N-170'>
@@ -131,12 +132,12 @@ export default function Page() {
               <p className='text-std-16N-170 desktop:text-std-20N-150'>
                 1時23分に○○地区に対して避難準備情報が発令されました。お年寄りの方等避難に時間がかかる方は、直ちに指定避難所へ避難してください。
               </p>
-              <EmergencyBannerButton className='mt-4 mb-2' href='#' target='_blank'>
+              <EmergencyBannerButton_v2 className='mt-4 mb-2' href='#' target='_blank'>
                 指定避難所を確認する
-              </EmergencyBannerButton>
+              </EmergencyBannerButton_v2>
             </div>
           </EmergencyBannerBody_v2>
-        </EmergencyBanner_v2>
+        </EmergencyBanner>
       </div>
 
       {/**marginを作成 */}
@@ -165,11 +166,11 @@ export default function Page() {
       <section id="demo" className="container mx-auto p-4">
       <h1 className='text-3xl md:text-4xl font-bold mb-6 text-text-heading'>通知バナー</h1>
        <div className='flex flex-col gap-8'>
-        <NotificationBanner bannerStyle='color-chip' type='info1'>
+        <NotificationBanner_v2 bannerStyle='color-chip' type='info1'>
           <NotificationBannerHeader_v2>
-            <NotificationBannerHeading level='h2'>
+            <NotificationBannerHeading_v2 level='h2'>
               登録期間が延長されました
-            </NotificationBannerHeading>
+            </NotificationBannerHeading_v2>
           </NotificationBannerHeader_v2>
           <NotificationBannerBody_v2>
             ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。
@@ -182,14 +183,14 @@ export default function Page() {
               </Button>
             </div>
           </NotificationBannerBody_v2>
-        </NotificationBanner>
-        <NotificationBanner bannerStyle='color-chip' type='info2'>
-          <NotificationBannerHeader>
-            <NotificationBannerHeading level='h2'>
+        </NotificationBanner_v2>
+        <NotificationBanner_v2 bannerStyle='color-chip' type='info2'>
+          <NotificationBannerHeader_v2>
+            <NotificationBannerHeading_v2 level='h2'>
               登録期間が延長されました
-            </NotificationBannerHeading>
-          </NotificationBannerHeader>
-          <NotificationBannerBody>
+            </NotificationBannerHeading_v2>
+          </NotificationBannerHeader_v2>
+          <NotificationBannerBody_v2>
             ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。
             <div className='grid mt-4 gap-2 grid-flow-col grid-cols-2 desktop:grid-cols-none desktop:gap-4 desktop:justify-end'>
               <Button className='!px-3 text-solid-gray-800 hover:text-solid-gray-900 hover:bg-solid-gray-200 active:text-black active:bg-solid-gray-300 desktop:!px-4' size='md' type='button' variant='outline'>
@@ -199,14 +200,14 @@ export default function Page() {
                 アクションボタン
               </Button>
             </div>
-          </NotificationBannerBody>
-        </NotificationBanner>
+          </NotificationBannerBody_v2>
+        </NotificationBanner_v2>
         <NotificationBanner_v2 bannerStyle='color-chip' type='warning'>
-          <NotificationBannerHeader>
-            <NotificationBannerHeading level='h2'>
+          <NotificationBannerHeader_v2>
+            <NotificationBannerHeading_v2 level='h2'>
               偽SNSアカウントにご注意ください
-            </NotificationBannerHeading>
-          </NotificationBannerHeader>
+            </NotificationBannerHeading_v2>
+          </NotificationBannerHeader_v2>
           <NotificationBannerBody_v2>
             ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。
             <div className='grid mt-4 gap-2 grid-flow-col grid-cols-2 desktop:grid-cols-none desktop:gap-4 desktop:justify-end'>
@@ -221,9 +222,9 @@ export default function Page() {
         </NotificationBanner_v2>
         <NotificationBanner_v2 bannerStyle='color-chip' type='error'>
           <NotificationBannerHeader_v2>
-            <NotificationBannerHeading level='h2'>
+            <NotificationBannerHeading_v2 level='h2'>
               操作を完了できませんでした
-            </NotificationBannerHeading>
+            </NotificationBannerHeading_v2>
           </NotificationBannerHeader_v2>
           <NotificationBannerBody_v2>
             ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。
@@ -238,11 +239,11 @@ export default function Page() {
           </NotificationBannerBody_v2>
         </NotificationBanner_v2>
         <NotificationBanner_v2 bannerStyle='color-chip' type='success'>
-          <NotificationBannerHeader>
-            <NotificationBannerHeading level='h2'>
+          <NotificationBannerHeader_v2>
+            <NotificationBannerHeading_v2 level='h2'>
               登録手続きは全て完了しました
-            </NotificationBannerHeading>
-          </NotificationBannerHeader>
+            </NotificationBannerHeading_v2>
+          </NotificationBannerHeader_v2>
           <NotificationBannerBody_v2>
             ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。
             <div className='grid mt-4 gap-2 grid-flow-col grid-cols-2 desktop:grid-cols-none desktop:gap-4 desktop:justify-end'>

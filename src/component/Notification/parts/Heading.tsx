@@ -5,7 +5,7 @@ type NotificationBannerHeadingProps_v2 = ComponentProps<'h2'> & {
   level: NotificationBannerHeadingLevel_v2;
 };
 
-export const NotificationBannerHeading = (props: NotificationBannerHeadingProps_v2) => {
+export const NotificationBannerHeading_v2 = (props: NotificationBannerHeadingProps_v2) => {
   const { level, className, children, ...rest } = props;
   const Tag = level;
 
