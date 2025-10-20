@@ -4,6 +4,18 @@ import React from "react";
 import "@fontsource-variable/noto-sans-jp";
 import "@fontsource/noto-serif-jp";
 import { motion } from "framer-motion";
+import "@digital-go-jp/design-tokens"
+import "@digital-go-jp/tailwind-theme-plugin"
+import {
+  EmergencyBanner,
+  EmergencyBannerHeading,
+  EmergencyBannerBody,
+  EmergencyBannerButton,
+} from '../component/lib'; // コンポーネントをインポート
+
+//demo用
+const updateTime = new Date('2024-01-01T06:00:00');
+
 
 export default function Page() {
   return (
@@ -16,6 +28,7 @@ export default function Page() {
           </h1>
           <nav className="space-x-6 text-sm">
             <a href="#" className="hover:underline text-text-link">ホーム</a>
+            <a href="/demo/" className="hover:underline text-text-link">デモ</a>
             <a href="#" className="hover:underline text-text-link">お知らせ</a>
             <a href="#" className="hover:underline text-text-link">サポート</a>
           </nav>
