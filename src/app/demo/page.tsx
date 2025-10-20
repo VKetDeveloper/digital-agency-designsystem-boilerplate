@@ -7,7 +7,6 @@ import "@fontsource/noto-serif-jp";
 import { motion } from "framer-motion";
 import "@digital-go-jp/design-tokens";
 import "@digital-go-jp/tailwind-theme-plugin";
-import "../../parts"
 import {
   EmergencyBanner,
   EmergencyBannerHeading,

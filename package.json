@@ -20,6 +20,7 @@
     "@mantine/hooks": "^8.3.5",
     "@netlify/open-api": "^2.40.0",
     "@next/third-parties": "^15.5.6",
+    "@storybook/react-vite": "^9.1.13",
     "create-cookie": "^1.1.1",
     "expo-font": "^14.0.9",
     "framer-motion": "^12.23.24",
