@@ -164,7 +164,6 @@ export default function App({ Component, pageProps }) {
 
 このプロジェクトは MIT ライセンスで公開されています。
 
----
 
 > 💡 **Tips:**
 > VS Code の警告「Unknown at rule @plugin」は Tailwind CSS IntelliSense 拡張をインストールすると解消します。
@@ -174,5 +173,4 @@ export default function App({ Component, pageProps }) {
 > { "css.lint.unknownAtRules": "ignore" }
 > ```
 
-```
 
