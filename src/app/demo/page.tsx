@@ -7,7 +7,7 @@ import "@fontsource/noto-serif-jp";
 import { motion } from "framer-motion";
 import "@digital-go-jp/design-tokens";
 import "@digital-go-jp/tailwind-theme-plugin";
-
+import "../../parts"
 import {
   EmergencyBanner,
   EmergencyBannerHeading,
@@ -22,6 +22,8 @@ import {
   NotificationBannerBody,
   Button,
 } from '../../component/NotificationBanner';
+
+
 
 const updateTime = new Date('2024-01-01T06:00:00');
 
@@ -117,6 +119,7 @@ export default function Page() {
           </NotificationBannerBody>
         </NotificationBanner>
       </section>
+      
 
       <footer className="border-t border-border-base py-6 bg-surface-alt text-center text-sm text-text-tertiary">
         © 2025 デジタル庁デザインシステム Sample Boilerplate
