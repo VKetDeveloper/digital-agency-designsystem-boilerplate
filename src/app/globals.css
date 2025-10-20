@@ -1,0 +1,36 @@
+/* Tailwind v4の読み込み */
+@import "tailwindcss";
+
+/* デジタル庁プラグイン */
+@plugin '@digital-go-jp/tailwind-theme-plugin';
+
+/* カスタム変数 */
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --font-geist-sans: "Noto Sans JP", sans-serif;
+  --font-geist-mono: "Noto Serif JP", serif;
+}
+
+/* Tailwindテーマとしてインライン登録 */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+/* ダークモード対応 */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+/* bodyに変数を反映 */
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
