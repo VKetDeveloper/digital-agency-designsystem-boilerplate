@@ -16,10 +16,6 @@ import {
 } from '../../component/lib';
 
 import {
-  NotificationBanner,
-  NotificationBannerHeader,
-  NotificationBannerHeading,
-  NotificationBannerBody,
   Button,
 } from '../../component/NotificationBanner';
 
@@ -38,6 +34,8 @@ import {
   NotificationBannerHeader_v2,
 } from '../../component/Notification';
 
+
+import ReadSpeakerButton from '../../component/readSpeaker/parts';
 
 
 const updateTime = new Date('2024-01-01T06:00:00');
@@ -257,51 +255,17 @@ export default function Page() {
           </NotificationBannerBody_v2>
         </NotificationBanner_v2>
       </div>
-
-        <NotificationBanner bannerStyle='color-chip' type='error'>
-          <NotificationBannerHeader>
-            <NotificationBannerHeading level='h2'>
-              操作を完了できませんでした
-            </NotificationBannerHeading>
-          </NotificationBannerHeader>
-          <NotificationBannerBody>
-            <p>ネットワークエラーにより、処理を中断しました。時間をおいて再度お試しください。</p>
-            <div className='grid mt-4 gap-2 grid-flow-col grid-cols-2 desktop:grid-cols-none desktop:gap-4 desktop:justify-end'>
-              <Button size='md' type='button' variant='outline'>
-                ヘルプを確認
-              </Button>
-              <Button size='md' type='button' variant='solid-fill'>
-                再度実行する
-              </Button>
-            </div>
-          </NotificationBannerBody>
-        </NotificationBanner>
-
-        {/* 🟢 success バナー */}
-        <NotificationBanner bannerStyle='color-chip' type='success'>
-          <NotificationBannerHeader>
-            <NotificationBannerHeading level='h2'>
-              送信が完了しました
-            </NotificationBannerHeading>
-          </NotificationBannerHeader>
-          <NotificationBannerBody>
-            <p>データが正常に送信されました。控え番号は #123456 です。</p>
-            <div className='grid mt-4 gap-2 grid-flow-col grid-cols-2 desktop:grid-cols-none desktop:gap-4 desktop:justify-end'>
-              <Button size='md' type='button' variant='outline'>
-                内容を確認
-              </Button>
-              <Button size='md' type='button' variant='solid-fill'>
-                戻る
-              </Button>
-            </div>
-          </NotificationBannerBody>
-        </NotificationBanner>
       </section>
 
       <section className="container mx-auto p-4">
         <ErrorText>
           ＊順次追加予定
         </ErrorText>
+    <ul className="space-y-2">
+      <li className="setting_speaker">
+        <ReadSpeakerButton />
+      </li>
+    </ul>
       </section>
       
 
