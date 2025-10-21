@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { useRef } from 'react';
 import Link from "next/link";
 import "@fontsource-variable/noto-sans-jp";
 import "@fontsource/noto-serif-jp";
@@ -12,7 +13,8 @@ import {
   EmergencyBannerHeading,
   EmergencyBannerBody,
   EmergencyBannerButton,
-  ErrorText
+  ErrorText,
+  Dialog, DialogBody
 } from '../../component/lib';
 
 import {
@@ -41,6 +43,13 @@ import ReadSpeakerButton from '../../component/readSpeaker/parts';
 const updateTime = new Date('2024-01-01T06:00:00');
 
 export default function Page() {
+
+  const dialogRef = useRef<HTMLDialogElement>(null);
+
+  const openDialog = () => {
+    dialogRef.current?.showModal();
+  };
+
   return (
     <main className="min-h-screen bg-bg-base text-text-primary font-sans">
       <header className="border-b border-border-base bg-surface-primary">
@@ -266,6 +275,26 @@ export default function Page() {
         <ReadSpeakerButton />
       </li>
     </ul>
+      </section>
+
+ {/* -------------------- Dialog Demo -------------------- */}
+      <section className="container mx-auto p-4">
+        <h1 className="text-3xl md:text-4xl font-bold mb-6 text-text-heading">ダイアログデモ</h1>
+        <Button type="button" variant="solid-fill" onClick={openDialog}>
+          ダイアログを開く
+        </Button>
+
+        <Dialog ref={dialogRef}>
+          <DialogBody>
+            <h2 className="text-xl font-bold mb-2">モーダルタイトル</h2>
+            <p className="mb-4">
+              これは v1 のダイアログコンポーネントです。背景クリックで閉じることができます。
+            </p>
+            <Button type="button" variant="outline" onClick={() => dialogRef.current?.close()}>
+              閉じる
+            </Button>
+          </DialogBody>
+        </Dialog>
       </section>
       
 

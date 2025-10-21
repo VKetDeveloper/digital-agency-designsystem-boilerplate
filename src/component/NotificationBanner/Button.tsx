@@ -8,6 +8,7 @@ interface ButtonProps {
   variant?: 'outline' | 'solid-fill';
   className?: string;
   children: React.ReactNode;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>; // ← ここを追加
 }
 
 const SIZE_CLASSES = {
@@ -22,6 +23,7 @@ export const Button: React.FC<ButtonProps> = ({
   variant = 'outline',
   className = '',
   children,
+  onClick, // ← ここで受け取る
 }) => {
   let contextColors: ColorMapper | undefined;
   try {
@@ -67,6 +69,7 @@ export const Button: React.FC<ButtonProps> = ({
         font-medium rounded-md transition-colors whitespace-nowrap
         ${className}
       `}
+      onClick={onClick} // ← ここで渡す
     >
       {children}
     </button>
