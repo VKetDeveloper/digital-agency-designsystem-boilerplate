@@ -10,6 +10,11 @@ type ReadSpeakerButtonProps = {
   label?: string;
 };
 
+// ReadSpeaker の window 拡張型
+interface ReadSpeakerWindow extends Window {
+  readpage?: (url: string, targetId: string) => void;
+}
+
 export default function ReadSpeakerButton({
   customerId = '8435',
   lang = 'ja_jp',
@@ -25,8 +30,9 @@ export default function ReadSpeakerButton({
     const href = `https://app-eas.readspeaker.com/cgi-bin/rsent?customerid=${customerId}&lang=${lang}&readid=${readId}&url=`;
 
     const callReadPage = () => {
-      if (typeof window !== 'undefined' && (window as any).readpage) {
-        (window as any).readpage(href, 'tmp_readspeaker');
+      const win = window as ReadSpeakerWindow;
+      if (win.readpage) {
+        win.readpage(href, 'tmp_readspeaker');
       } else {
         console.warn('ReadSpeakerがまだロードされていません。リトライします...');
         setTimeout(callReadPage, 300); // 0.3秒ごとに再試行

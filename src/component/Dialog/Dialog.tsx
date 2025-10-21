@@ -26,6 +26,9 @@ export const Dialog = forwardRef<HTMLDialogElement, DialogProps>((props, ref) =>
   );
 });
 
+// ← displayName を追加
+Dialog.displayName = 'Dialog';
+
 export type DialogBodyProps = ComponentProps<'div'>;
 
 export const DialogBody = (props: DialogBodyProps) => {
